@@ -24,6 +24,10 @@ public class TAGS {
     public static String ADMIN_UPDATE_DEPARTMENT= "update_department";
     public static String ADMIN_DELETE_DEPARTMENT= "delete_department";
 
+    public static String GET_ALL_MEMBERS= "get_all_members";
+
+
+
 
 
 
