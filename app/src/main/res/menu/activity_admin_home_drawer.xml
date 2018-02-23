@@ -12,9 +12,9 @@
             android:id="@+id/nav_manage_departments"
             android:title="Manage departments" />
         <item
-            android:id="@+id/nav_manage"
-            android:icon="@drawable/ic_menu_manage"
-            android:title="Tools" />
+            android:id="@+id/nav_manage_members"
+            android:title="Add Members" />
+
     </group>
 
     <item android:title="Communicate">

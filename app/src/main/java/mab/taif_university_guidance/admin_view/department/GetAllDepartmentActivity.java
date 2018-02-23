@@ -143,8 +143,9 @@ mWebDeleteDepartmentModel.deleteCollege(GetAllDepartmentActivity.this, idDepartm
     @Override
     public void onError(VolleyError error) {
 
-    }
-});
+        Toast.makeText(GetAllDepartmentActivity.this, ""+error.getMessage(), Toast.LENGTH_SHORT).show();
+                        }
+                        });
 
                     }
                 });
@@ -152,13 +153,13 @@ mWebDeleteDepartmentModel.deleteCollege(GetAllDepartmentActivity.this, idDepartm
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
 
-
                         Intent intent = new Intent(GetAllDepartmentActivity.this , UpdateDepartmentActivity.class);
                         intent.putExtra("id_department" , idDepartmentArray[idDepartment]);
                         intent.putExtra("id_user" , idUserDepartmentArray[idDepartment]);
                         intent.putExtra("department_name" , nameDepartmentArray[idDepartment]);
                         intent.putExtra("department_description" , descriptionDepartmentArray[idDepartment]);
                         startActivity(intent);
+
 
                     }
                 });

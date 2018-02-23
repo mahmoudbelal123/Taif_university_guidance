@@ -25,6 +25,7 @@ import org.json.JSONObject;
 import mab.taif_university_guidance.R;
 import mab.taif_university_guidance.adapters.AdapterGetAllUsers;
 import mab.taif_university_guidance.admin_view.department.GetAllDepartmentActivity;
+import mab.taif_university_guidance.admin_view.members.AddMemeberActivity;
 import mab.taif_university_guidance.model.RequestInterface;
 import mab.taif_university_guidance.model.admin.user.WebDeleteUserModel;
 import mab.taif_university_guidance.model.admin.user.WebGetAllUsersModel;
@@ -254,7 +255,9 @@ public class AdminHomeActivity extends AppCompatActivity
             startActivity(new Intent(AdminHomeActivity.this , GetAllDepartmentActivity.class));
 
         }
-        else if (id == R.id.nav_manage) {
+        else if (id == R.id.nav_manage_members) {
+
+            startActivity(new Intent(AdminHomeActivity.this , AddMemeberActivity.class));
 
         } else if (id == R.id.nav_share) {
 
