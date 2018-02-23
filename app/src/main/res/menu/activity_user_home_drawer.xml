@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_camera"
+            android:title="Search for places" />
+        <item
+            android:id="@+id/nav_gallery"
+            android:title="Colleges" />
+        <item
+            android:id="@+id/nav_slideshow"
+            android:title="Faculty Members" />
+        <item
+            android:id="@+id/nav_manage"
+            android:title="Add New Topic" />
+        <item
+            android:id="@+id/item1"
+            android:title="Display old Topics" />
+        <item
+            android:id="@+id/item2"
+            android:title="Add Alarm for Lectures" />
+
+    </group>
+
+    <item android:title="Communicate">
+        <menu>
+            <item
+                android:id="@+id/settings"
+                android:title="Settings" />
+            <item
+                android:id="@+id/logout"
+                android:title="Logout" />
+        </menu>
+    </item>
+
+</menu>

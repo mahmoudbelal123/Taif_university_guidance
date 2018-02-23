@@ -1,0 +1,23 @@
+<resources>
+    <string name="app_name">Taif university guidance</string>
+    <string name="enter_as_visitor">Enter as visitor</string>
+    <string name="log_in">Log in</string>
+    <string name="sign_up">Sign up</string>
+
+    <string name="search_for_places">Search for Places</string>
+    <string name="colleges">Colleges</string>
+    <string name="faculty_members">Faculty Members</string>
+    <string name="title_activity_map_search_places">Map</string>
+
+
+    <string name="display_study_plans">Display Study Plans</string>
+    <string name="display_info">Display Information</string>
+    <string name="title_activity_user_home">UserHomeActivity</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_admin_home">AdminHomeActivity</string>
+
+</resources>

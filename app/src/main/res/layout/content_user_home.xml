@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_marginTop="60dp"
+
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <org.angmarch.views.NiceSpinner
+        android:layout_marginTop="60dp"
+        android:hint="Select Place"
+        android:layout_gravity="center"
+        android:id="@+id/nice_spinner_for_user"
+        android:layout_width="300dp"
+        android:layout_height="60dp"
+        android:layout_margin="16dp"/>
+
+
+    <fragment
+        android:layout_marginTop="10dp"
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:map="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/map"
+        android:name="com.google.android.gms.maps.SupportMapFragment"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context="mab.taif_university_guidance.user.UserHomeActivity" />
+
+
+</LinearLayout>

@@ -1,0 +1,43 @@
+<LinearLayout
+    android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_gravity="center"
+    android:gravity="center"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+
+    <org.angmarch.views.NiceSpinner
+        android:hint="Select College"
+        android:layout_gravity="center"
+        android:id="@+id/nice_spinner_select_college"
+        android:layout_width="300dp"
+        android:layout_height="60dp"
+        android:layout_margin="16dp"/>
+
+
+    <org.angmarch.views.NiceSpinner
+        android:hint="Select Department"
+        android:layout_gravity="center"
+        android:id="@+id/nice_spinner_select_department"
+        android:layout_width="300dp"
+        android:layout_height="60dp"
+        android:layout_margin="16dp"/>
+
+
+
+    <Button
+        android:id="@+id/button_visitor_display_study_pans"
+        android:layout_width="300dp"
+        android:layout_height="60dp"
+        android:layout_gravity="center"
+        android:layout_margin="10dp"
+        android:background="@drawable/button_style"
+        android:text="@string/display_study_plans"
+        android:textAllCaps="false"
+        android:textColor="@color/colorWhite"
+        android:textSize="20sp"
+        android:textStyle="bold" />
+
+
+</LinearLayout>

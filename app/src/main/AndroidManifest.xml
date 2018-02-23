@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="mab.taif_university_guidance">
+
+    <!--
+         The ACCESS_COARSE/FINE_LOCATION permissions are not required to use
+         Google Maps Android API v2, but you must specify either coarse or fine
+         location permissions for the 'MyLocation' functionality. 
+    -->
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/taif"
+        android:label="@string/app_name"
+        android:roundIcon="@drawable/taif"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity
+            android:name=".SplashActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".user.SelectionUserActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+        <activity
+            android:name=".user.RegisterActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+        <activity
+            android:name=".user.LoginActivity"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar">
+            >
+        </activity>
+        <activity
+            android:name=".visitor.HomeVisitorActivity"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+        <!--
+             The API key for Google Maps-based APIs is defined as a string resource.
+             (See the file "res/values/google_maps_api.xml").
+             Note that the API key is linked to the encryption key used to sign the APK.
+             You need a different API key for each encryption key, including the release key that is used to
+             sign the APK for publishing.
+             You can define the keys for the debug and release targets in src/debug/ and src/release/. 
+        -->
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="@string/google_maps_key" />
+
+        <activity
+            android:name=".visitor.MapSearchPlacesActivity"
+            android:label="@string/title_activity_map_search_places"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+        <activity
+            android:name=".visitor.SearchCollegeAndDepartmentActivity"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+        <activity
+            android:name=".visitor.SearchFacultyMemberActivity"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+        <activity
+            android:name=".visitor.AboutFacultyMemberActivity"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+        <activity
+            android:name=".user.UserHomeActivity"
+            android:label=""
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".user.SettingsActivity"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+        <activity
+            android:name=".admin_view.AdminHomeActivity"
+            android:label="@string/title_activity_admin_home"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".admin_view.ManageCollegesActivity" />
+        <activity android:name=".admin_view.AddCollegeActivity" />
+        <activity android:name=".admin_view.UpdateCollegeActivity" />
+        <activity android:name=".admin_view.DeleteCollegeActivity" />
+        <activity android:name=".admin_view.UpdateActivityByAdminActivity" />
+        <activity android:name=".admin_view.department.AddDepartmentActivity" />
+        <activity android:name=".admin_view.department.GetAllDepartmentActivity" />
+        <activity android:name=".admin_view.department.UpdateDepartmentActivity"></activity>
+    </application>
+
+</manifest>
