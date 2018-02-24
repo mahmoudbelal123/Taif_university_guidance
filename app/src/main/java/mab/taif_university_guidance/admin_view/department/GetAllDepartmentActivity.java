@@ -283,10 +283,10 @@ mWebDeleteDepartmentModel.deleteCollege(GetAllDepartmentActivity.this, idDepartm
 
                         mListViewDisplayDepartments.setAdapter(mAdapterGetAllDepartments);
 
-                        idDepartmentBuffer= null;
-                        idUserDepartmentBuffer=null;
-                        nameDepartmentBuffer = null;
-                        descriptionDepartmentBuffer=null;
+                        idDepartmentBuffer= new StringBuffer();
+                        idUserDepartmentBuffer=new StringBuffer();
+                        nameDepartmentBuffer = new StringBuffer();
+                        descriptionDepartmentBuffer=new StringBuffer();
 
 //                        idDepartmentArray=null;
 //                        idUserDepartmentArray=null;

@@ -88,7 +88,8 @@
         <activity android:name=".admin_view.department.GetAllDepartmentActivity" />
         <activity android:name=".admin_view.department.UpdateDepartmentActivity" />
         <activity android:name=".admin_view.members.AddMemeberActivity" />
-        <activity android:name=".user.AlarmLectureActivity"></activity>
+        <activity android:name=".user.AlarmLectureActivity" />
+        <activity android:name=".admin_view.members.GetAllMembersActivity"></activity>
     </application>
 
 </manifest>

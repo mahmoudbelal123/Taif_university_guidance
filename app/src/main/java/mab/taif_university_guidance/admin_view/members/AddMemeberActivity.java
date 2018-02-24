@@ -46,6 +46,12 @@ public class AddMemeberActivity extends AppCompatActivity implements View.OnClic
 
         mAddMember.setOnClickListener(this);
 
+        if(getIntent() !=null)
+        {
+            Toast.makeText(this, ""+getIntent().getStringExtra("nameCollege"), Toast.LENGTH_SHORT).show();
+        }
+
+
         today = Calendar.getInstance();
         yr = today.get(Calendar.YEAR);
         month = today.get(Calendar.MONTH);
@@ -59,6 +65,7 @@ public class AddMemeberActivity extends AppCompatActivity implements View.OnClic
             }
         });
     }
+
 
     private void getJoinDate()
     {
@@ -134,7 +141,7 @@ public class AddMemeberActivity extends AppCompatActivity implements View.OnClic
         else {
 
 
-            webSignUpModel.addUser(AddMemeberActivity.this, username, email, password, joinDateSelected, "member", "1" /*user college*/, new RequestInterface() {
+            webSignUpModel.addUser(AddMemeberActivity.this, username, email, password, joinDateSelected, "member", getIntent().getStringExtra("idCollege") /*user college*/, new RequestInterface() {
                 @Override
                 public void onResponse(String response) {
                     Log.d("ADD_USER", response);

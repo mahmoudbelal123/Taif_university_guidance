@@ -15,19 +15,19 @@ import java.util.HashMap;
 import mab.taif_university_guidance.model.RequestInterface;
 import mab.taif_university_guidance.model.TAGS;
 import mab.taif_university_guidance.model.URL;
-import mab.taif_university_guidance.model.tables.Department;
 import mab.taif_university_guidance.model.tables.User;
 
 /**
  * Created by user on 2/18/2018.
  */
 
-public class WebGetAllMembersModel {
+public class WebUpdateMembersModel {
 
     private RequestQueue queue;
     private StringRequest requestString;
 
-    public void getAllMembers(final Context context, final String idCollege , final RequestInterface requestInterface)
+    public void updateMember(final Context context, final String idUser ,final String username,final
+            String email,final String password ,final  String join_date,final String userCollegeId, final RequestInterface requestInterface)
     {
         queue = Volley.newRequestQueue(context);
         requestString = new StringRequest(com.android.volley.Request.Method.POST, URL.url, new Response.Listener<String>() {
@@ -50,8 +50,14 @@ public class WebGetAllMembersModel {
                 java.util.Map<String, String> params = new HashMap<String, String>();
 
 
-                params.put(User.USER_COLLEGE,idCollege );
-                params.put(TAGS.TAG,TAGS.GET_ALL_MEMBERS );
+                params.put(User.ID_USER,idUser );
+                params.put(User.USER_COLLEGE,userCollegeId );
+                params.put(User.USERNAME,username );
+                params.put(User.PASSWORD,password );
+                params.put(User.EMAIL,email );
+                params.put(User.JOIN_DATE,join_date );
+
+                params.put(TAGS.TAG,TAGS.UPDATE_MEMBER );
 
                 return params;
             }
