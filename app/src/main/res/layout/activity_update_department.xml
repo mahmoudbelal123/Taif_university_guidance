@@ -103,7 +103,7 @@
             android:id="@+id/button_update_member_update"
             android:layout_width="300dp"
             android:layout_height="wrap_content"
-            android:text="update  Member"
+            android:text="updat   Member"
             />
 
         <ProgressBar
