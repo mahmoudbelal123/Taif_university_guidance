@@ -35,7 +35,7 @@
                 android:id="@+id/edit_name_department_college"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="enter department name" />
+                android:hint="department name" />
 
         </android.support.design.widget.TextInputLayout>
 
@@ -48,7 +48,7 @@
                 android:id="@+id/edit_description_department_college"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="enter description department" />
+                android:hint="description department" />
 
         </android.support.design.widget.TextInputLayout>
 
@@ -63,7 +63,7 @@
             android:id="@+id/button_save_department_data"
             android:layout_width="300dp"
             android:layout_height="wrap_content"
-            android:text="Save department"
+            android:text="Fill all data of department"
             />
 
         <ProgressBar

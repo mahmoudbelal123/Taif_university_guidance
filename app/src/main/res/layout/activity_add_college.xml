@@ -25,7 +25,7 @@
                 android:id="@+id/edit_name_college"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="enter college name" />
+                android:hint="college name" />
 
         </android.support.design.widget.TextInputLayout>
 
@@ -38,7 +38,7 @@
                 android:id="@+id/edit_description_college"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="enter description college" />
+                android:hint="description college" />
 
         </android.support.design.widget.TextInputLayout>
 
@@ -53,7 +53,7 @@
             android:id="@+id/button_save_college_data"
             android:layout_width="300dp"
             android:layout_height="wrap_content"
-            android:text="Save"
+            android:text="Fill data of new college"
             />
 
         <ProgressBar

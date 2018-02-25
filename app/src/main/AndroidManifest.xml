@@ -20,7 +20,7 @@
         <activity
             android:name=".SplashActivity"
             android:screenOrientation="portrait"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar">
+            >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -30,19 +30,19 @@
         <activity
             android:name=".user.SelectionUserActivity"
             android:screenOrientation="portrait"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+          />
         <activity
             android:name=".user.RegisterActivity"
             android:screenOrientation="portrait"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+             />
         <activity
             android:name=".user.LoginActivity"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar">
+            >
             >
         </activity>
         <activity
             android:name=".visitor.HomeVisitorActivity"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+             />
         <!--
              The API key for Google Maps-based APIs is defined as a string resource.
              (See the file "res/values/google_maps_api.xml").
@@ -58,23 +58,23 @@
         <activity
             android:name=".visitor.MapSearchPlacesActivity"
             android:label="@string/title_activity_map_search_places"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+            />
         <activity
             android:name=".visitor.SearchCollegeAndDepartmentActivity"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+             />
         <activity
             android:name=".visitor.SearchFacultyMemberActivity"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+            />
         <activity
             android:name=".visitor.AboutFacultyMemberActivity"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+             />
         <activity
             android:name=".user.UserHomeActivity"
             android:label=""
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".user.SettingsActivity"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+             />
         <activity
             android:name=".admin_view.AdminHomeActivity"
             android:label="@string/title_activity_admin_home"

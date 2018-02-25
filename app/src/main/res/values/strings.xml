@@ -11,7 +11,7 @@
 
 
     <string name="display_study_plans">Display Study Plans</string>
-    <string name="display_info">Display Information</string>
+    <string name="display_info">Display Info about this Member</string>
     <string name="title_activity_user_home">UserHomeActivity</string>
 
     <string name="navigation_drawer_open">Open navigation drawer</string>

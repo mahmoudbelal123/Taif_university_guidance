@@ -2,6 +2,7 @@ package mab.taif_university_guidance.admin_view;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -25,7 +26,9 @@ public class UpdateActivityByAdminActivity extends AppCompatActivity implements 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_update_by_admin);
-
+        android.support.v7.app.ActionBar actionBar = getSupportActionBar();
+        actionBar.setHomeButtonEnabled(true);
+        actionBar.setDisplayHomeAsUpEnabled(true);
         mUpdateCollegeDataBtn=(Button)findViewById(R.id.button_update_college_update);
         mUpdateCollegeDataBtn.setOnClickListener(this);
 
@@ -46,7 +49,17 @@ public class UpdateActivityByAdminActivity extends AppCompatActivity implements 
         }
 
     }
-
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case android.R.id.home:
+                //Write your logic here
+                this.finish();
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
+        }
+    }
     private void updateCollegeData()
     {
 

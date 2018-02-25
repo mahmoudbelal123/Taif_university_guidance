@@ -4,6 +4,7 @@ import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
@@ -35,7 +36,9 @@ public class DeleteCollegeActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_delete_college);
-
+        android.support.v7.app.ActionBar actionBar = getSupportActionBar();
+        actionBar.setHomeButtonEnabled(true);
+        actionBar.setDisplayHomeAsUpEnabled(true);
         mListViewGetAllColleges=(ListView)findViewById(R.id.listView_get_All_colleges_delete);
         mWebGetAllCollegesModel=new WebGetAllCollegesModel();
         mWebDeleteCollegeModel=new WebDeleteCollegeModel();
@@ -48,7 +51,17 @@ public class DeleteCollegeActivity extends AppCompatActivity {
         getAllColleges();
         onItemCLickList();
     }
-
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case android.R.id.home:
+                //Write your logic here
+                this.finish();
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
+        }
+    }
     private  void onItemCLickList()
     {
         mListViewGetAllColleges.setOnItemClickListener(new AdapterView.OnItemClickListener() {

@@ -1,9 +1,13 @@
 package mab.taif_university_guidance.user;
 
+import android.app.ActionBar;
 import android.app.DatePickerDialog;
+import android.support.v7.app.ActionBarActivity;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.Toolbar;
 import android.util.Log;
+import android.view.MenuItem;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Button;
@@ -35,6 +39,11 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
 
+        android.support.v7.app.ActionBar actionBar = getSupportActionBar();
+        actionBar.setHomeButtonEnabled(true);
+        actionBar.setDisplayHomeAsUpEnabled(true);
+
+
         mSignUpBtn=(Button)findViewById(R.id.button_sign_up);
         mUserNameEdit=(EditText) findViewById(R.id.edit_username);
         mEmailEdit=(EditText)findViewById(R.id.edit_email);
@@ -62,7 +71,17 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
 
 
     }
-
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case android.R.id.home:
+                //Write your logic here
+                this.finish();
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
+        }
+    }
     private void getJoinDate()
     {
 

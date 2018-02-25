@@ -37,7 +37,7 @@
                 android:id="@+id/edit_login_email"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="enter Email" />
+                android:hint="Email" />
 
         </android.support.design.widget.TextInputLayout>
 
@@ -54,7 +54,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="10dp"
-                android:hint="enter password"
+                android:hint="password"
                 android:inputType="textPassword" />
 
         </android.support.design.widget.TextInputLayout>

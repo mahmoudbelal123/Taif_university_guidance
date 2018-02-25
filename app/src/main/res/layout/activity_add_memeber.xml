@@ -25,7 +25,7 @@
                 android:id="@+id/edit_username_member"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="enter username" />
+                android:hint="username" />
 
         </android.support.design.widget.TextInputLayout>
 
@@ -38,7 +38,7 @@
                 android:id="@+id/edit_email_member"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="enter email"
+                android:hint="email"
                 />
 
         </android.support.design.widget.TextInputLayout>
@@ -53,7 +53,7 @@
                 android:id="@+id/edit_password_member"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="enter password"
+                android:hint="password"
                 android:inputType="textPassword"
                 />
 
@@ -68,7 +68,7 @@
                 android:id="@+id/edit_confirm_password_member"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="enter confirm password"
+                android:hint="confirm password"
                 android:inputType="textPassword"
                 />
 
@@ -85,7 +85,7 @@
                 android:id="@+id/edit_join_date_member"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="enter join date"
+                android:hint="join date"
                 android:inputType="text"
                 />
 
@@ -103,7 +103,7 @@
             android:id="@+id/button_add_member"
             android:layout_width="300dp"
             android:layout_height="wrap_content"
-            android:text="Add Member"
+            android:text="Fill all data of new ember"
             />
 
         <ProgressBar

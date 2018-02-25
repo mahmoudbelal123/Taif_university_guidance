@@ -27,7 +27,7 @@
                 android:id="@+id/edit_setting_email"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="enter email"
+                android:hint="email"
                 />
 
         </android.support.design.widget.TextInputLayout>
@@ -42,7 +42,7 @@
                 android:id="@+id/edit_setting_password"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="enter password"
+                android:hint="password"
                 android:inputType="textPassword"
                 />
 
@@ -57,7 +57,7 @@
                 android:id="@+id/edit_setting_new_password"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="enter New password"
+                android:hint="New password"
                 android:inputType="textPassword"
                 />
 

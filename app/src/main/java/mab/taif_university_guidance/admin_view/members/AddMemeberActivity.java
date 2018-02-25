@@ -4,6 +4,7 @@ import android.app.DatePickerDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.DatePicker;
@@ -34,9 +35,10 @@ public class AddMemeberActivity extends AppCompatActivity implements View.OnClic
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_memeber);
+        android.support.v7.app.ActionBar actionBar = getSupportActionBar();
+        actionBar.setHomeButtonEnabled(true);
+        actionBar.setDisplayHomeAsUpEnabled(true);
 
-
-        mAddMember=(Button)findViewById(R.id.button_add_member);
         mUserNameMemberEdit=(EditText) findViewById(R.id.edit_username_member);
         mEmailMemberEdit=(EditText)findViewById(R.id.edit_email_member);
         mPasswordMemberEdit=(EditText)findViewById(R.id.edit_password_member);
@@ -48,7 +50,6 @@ public class AddMemeberActivity extends AppCompatActivity implements View.OnClic
 
         if(getIntent() !=null)
         {
-            Toast.makeText(this, ""+getIntent().getStringExtra("nameCollege"), Toast.LENGTH_SHORT).show();
         }
 
 
@@ -88,7 +89,17 @@ public class AddMemeberActivity extends AppCompatActivity implements View.OnClic
         }
     };
 
-
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case android.R.id.home:
+                //Write your logic here
+                this.finish();
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
+        }
+    }
     @Override
     public void onClick(View view) {
         switch (view.getId())

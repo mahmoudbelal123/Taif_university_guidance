@@ -6,10 +6,12 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:layout_gravity="center"
     tools:context="mab.taif_university_guidance.visitor.AboutFacultyMemberActivity"
     >
 
 <LinearLayout
+    android:layout_gravity="center"
     android:orientation="vertical"
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -179,21 +181,21 @@
 
     </android.support.v7.widget.CardView>
 
-      <Button
-          android:textStyle="bold"
-          android:background="@color/colorWhite"
-          android:layout_gravity="center"
-          android:drawableLeft="@drawable/comments"
-          android:textColor="@color/colorRed"
-          android:text="See all Comments"
-          android:layout_width="300dp"
-          android:layout_height="50dp" />
+      <!--<Button-->
+          <!--android:textStyle="bold"-->
+          <!--android:background="@color/colorWhite"-->
+          <!--android:layout_gravity="center"-->
+          <!--android:drawableLeft="@drawable/comments"-->
+          <!--android:textColor="@color/colorRed"-->
+          <!--android:text="See all Comments"-->
+          <!--android:layout_width="300dp"-->
+          <!--android:layout_height="50dp" />-->
 
 
-    <ListView
-        android:visibility="gone"
-        android:id="@+id/list_display_all_cmments"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
+    <!--<ListView-->
+        <!--android:visibility="gone"-->
+        <!--android:id="@+id/list_display_all_cmments"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"/>-->
 </LinearLayout>
 </ScrollView>

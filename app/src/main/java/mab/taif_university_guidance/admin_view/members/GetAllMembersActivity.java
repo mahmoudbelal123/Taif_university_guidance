@@ -5,6 +5,7 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -69,7 +70,9 @@ public class GetAllMembersActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_get_all_members);
-
+        android.support.v7.app.ActionBar actionBar = getSupportActionBar();
+        actionBar.setHomeButtonEnabled(true);
+        actionBar.setDisplayHomeAsUpEnabled(true);
         mSelectCollegeSpinner=(NiceSpinner)findViewById(R.id.nice_spinner_select_college_for_member);
         mListViewGetAllMembers = (ListView)findViewById(R.id.listView_display_all_members);
 
@@ -138,7 +141,17 @@ public class GetAllMembersActivity extends AppCompatActivity {
 
 
 
-
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case android.R.id.home:
+                //Write your logic here
+                this.finish();
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
+        }
+    }
     private  void onListClickItem()
     {
         mListViewGetAllMembers.setOnItemClickListener(new AdapterView.OnItemClickListener() {
