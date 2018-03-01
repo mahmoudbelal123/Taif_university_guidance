@@ -18,7 +18,7 @@ public class SearchFacultyMemberActivity extends AppCompatActivity implements Vi
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_search_faculty_member);
           mDisplayMemberInfoBtn=(Button)findViewById(R.id.button_visitor_display_info);
-        mDisplayMemberInfoBtn.setOnClickListener(this);
+          mDisplayMemberInfoBtn.setOnClickListener(this);
 
         android.support.v7.app.ActionBar actionBar = getSupportActionBar();
         actionBar.setHomeButtonEnabled(true);

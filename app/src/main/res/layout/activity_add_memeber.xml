@@ -100,7 +100,7 @@
             android:background="@drawable/button_style"
             android:layout_margin="20dp"
             android:layout_gravity="center"
-            android:id="@+id/button_add_member"
+            android:id="@+id/button_add_member_add"
             android:layout_width="300dp"
             android:layout_height="wrap_content"
             android:text="Fill all data of new ember"

@@ -31,6 +31,8 @@ public class AddMemeberActivity extends AppCompatActivity implements View.OnClic
     Calendar today;
     WebSignUpModel webSignUpModel ;
 
+    String nameCollege , idCollege= null;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -45,11 +47,14 @@ public class AddMemeberActivity extends AppCompatActivity implements View.OnClic
         mConfirmPassMemberEdit=(EditText)findViewById(R.id.edit_confirm_password_member);
         mJoinDateMemberEdit=(EditText)findViewById(R.id.edit_join_date_member);
         mSignUpProgress=(ProgressBar)findViewById(R.id.progress_sign_up);
+        mAddMember=(Button)findViewById(R.id.button_add_member_add);
 
         mAddMember.setOnClickListener(this);
 
         if(getIntent() !=null)
         {
+           idCollege = getIntent().getStringExtra("idCollege");
+           nameCollege= getIntent().getStringExtra("nameCollege");
         }
 
 
@@ -104,7 +109,7 @@ public class AddMemeberActivity extends AppCompatActivity implements View.OnClic
     public void onClick(View view) {
         switch (view.getId())
         {
-            case R.id.button_add_member:
+            case R.id.button_add_member_add:
 
                 callAddUserApi();
                 break;

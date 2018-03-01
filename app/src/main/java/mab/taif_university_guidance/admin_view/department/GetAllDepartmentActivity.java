@@ -203,7 +203,7 @@ mWebDeleteDepartmentModel.deleteCollege(GetAllDepartmentActivity.this, idDepartm
          intent.putExtra("name_college" , nameCollegeArray[mSelectCollegeSpinner.getSelectedIndex()]);
          intent.putExtra("id_user" , idUserArray[mSelectCollegeSpinner.getSelectedIndex()]);
          intent.putExtra("id_college" , idCollegeArray[mSelectCollegeSpinner.getSelectedIndex()]);
-        intent.putExtra("id_department" , idDepartmentArray[mSelectCollegeSpinner.getSelectedIndex()]);
+        // intent.putExtra("id_department" , idDepartmentArray[mSelectCollegeSpinner.getSelectedIndex()]);
         startActivity(intent);
 
     }

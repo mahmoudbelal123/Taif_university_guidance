@@ -7,8 +7,12 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ProgressBar;
+import android.widget.Toast;
+
+import com.android.volley.VolleyError;
 
 import mab.taif_university_guidance.R;
+import mab.taif_university_guidance.model.RequestInterface;
 import mab.taif_university_guidance.model.admin.member.WebUpdateMembersModel;
 
 public class UpdateMemberActivity extends AppCompatActivity {
@@ -50,6 +54,8 @@ public class UpdateMemberActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
+               updateMember();
+
             }
         });
     }
@@ -58,10 +64,40 @@ public class UpdateMemberActivity extends AppCompatActivity {
     {
         String username = mUserNameMemberEdit.getText().toString();
         String email=mEmailMemberEdit.getText().toString();
+        String password=mPasswordMemberEdit.getText().toString();
+        String confirmPassword=mConfirmPassMemberEdit.getText().toString();
+        String join_date=mJoinDateMemberEdit.getText().toString();
+
+
+
+
         WebUpdateMembersModel mWebUpdateMembersModel = new WebUpdateMembersModel();
 
         //TODO call the update member
         //mWebUpdateMembersModel.updateMember(UpdateMemberActivity.this ,idMember,);
+
+       if(password.equals(confirmPassword))
+        mWebUpdateMembersModel.updateMember(UpdateMemberActivity.this, idMember, username, email, password, join_date, idCollege, new RequestInterface() {
+            @Override
+            public void onResponse(String response) {
+                if(response.equals("done"))
+                    Toast.makeText(UpdateMemberActivity.this, "Updated done.!", Toast.LENGTH_SHORT).show();
+
+                else
+                    Toast.makeText(UpdateMemberActivity.this, "Try Again.!", Toast.LENGTH_SHORT).show();
+            }
+
+            @Override
+            public void onError(VolleyError error) {
+                Toast.makeText(UpdateMemberActivity.this, ""+error.getMessage(), Toast.LENGTH_SHORT).show();
+            }
+        });
+
+       else
+       {
+           mConfirmPassMemberEdit.setError("password not match.!");
+       }
+
     }
 
     @Override

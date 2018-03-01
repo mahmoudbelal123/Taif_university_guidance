@@ -28,6 +28,7 @@ public class AddCollegeActivity extends AppCompatActivity implements View.OnClic
         android.support.v7.app.ActionBar actionBar = getSupportActionBar();
         actionBar.setHomeButtonEnabled(true);
         actionBar.setDisplayHomeAsUpEnabled(true);
+
         mSaveCollegeData=(Button)findViewById(R.id.button_save_college_data);
         mSaveCollegeData.setOnClickListener(this);
 
