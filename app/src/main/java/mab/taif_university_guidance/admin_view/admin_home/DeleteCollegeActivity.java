@@ -1,4 +1,4 @@
-package mab.taif_university_guidance.admin_view;
+package mab.taif_university_guidance.admin_view.admin_home;
 
 import android.app.AlertDialog;
 import android.content.DialogInterface;

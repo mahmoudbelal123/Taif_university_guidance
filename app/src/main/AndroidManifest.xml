@@ -19,8 +19,7 @@
         android:theme="@style/AppTheme">
         <activity
             android:name=".SplashActivity"
-            android:screenOrientation="portrait"
-            >
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -29,20 +28,14 @@
         </activity>
         <activity
             android:name=".user.SelectionUserActivity"
-            android:screenOrientation="portrait"
-          />
+            android:screenOrientation="portrait" />
         <activity
             android:name=".user.RegisterActivity"
-            android:screenOrientation="portrait"
-             />
-        <activity
-            android:name=".user.LoginActivity"
-            >
+            android:screenOrientation="portrait" />
+        <activity android:name=".user.LoginActivity">
             >
         </activity>
-        <activity
-            android:name=".visitor.HomeVisitorActivity"
-             />
+        <activity android:name=".visitor.HomeVisitorActivity" />
         <!--
              The API key for Google Maps-based APIs is defined as a string resource.
              (See the file "res/values/google_maps_api.xml").
@@ -57,40 +50,32 @@
 
         <activity
             android:name=".visitor.MapSearchPlacesActivity"
-            android:label="@string/title_activity_map_search_places"
-            />
-        <activity
-            android:name=".visitor.SearchCollegeAndDepartmentActivity"
-             />
-        <activity
-            android:name=".visitor.SearchFacultyMemberActivity"
-            />
-        <activity
-            android:name=".visitor.AboutFacultyMemberActivity"
-             />
+            android:label="@string/title_activity_map_search_places" />
+        <activity android:name=".visitor.SearchCollegeAndDepartmentActivity" />
+        <activity android:name=".visitor.SearchFacultyMemberActivity" />
+        <activity android:name=".visitor.AboutFacultyMemberActivity" />
         <activity
             android:name=".user.UserHomeActivity"
             android:label=""
             android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".user.SettingsActivity" />
         <activity
-            android:name=".user.SettingsActivity"
-             />
-        <activity
-            android:name=".admin_view.AdminHomeActivity"
+            android:name=".admin_view.admin_home.AdminHomeActivity"
             android:label="@string/title_activity_admin_home"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".admin_view.ManageCollegesActivity" />
-        <activity android:name=".admin_view.AddCollegeActivity" />
-        <activity android:name=".admin_view.UpdateCollegeActivity" />
-        <activity android:name=".admin_view.DeleteCollegeActivity" />
-        <activity android:name=".admin_view.UpdateActivityByAdminActivity" />
+        <activity android:name=".admin_view.admin_home.ManageCollegesActivity" />
+        <activity android:name=".admin_view.admin_home.AddCollegeActivity" />
+        <activity android:name=".admin_view.admin_home.UpdateCollegeActivity" />
+        <activity android:name=".admin_view.admin_home.DeleteCollegeActivity" />
+        <activity android:name=".admin_view.admin_home.UpdateActivityByAdminActivity" />
         <activity android:name=".admin_view.department.AddDepartmentActivity" />
         <activity android:name=".admin_view.department.GetAllDepartmentActivity" />
         <activity android:name=".admin_view.department.UpdateDepartmentActivity" />
         <activity android:name=".admin_view.members.AddMemeberActivity" />
         <activity android:name=".user.AlarmLectureActivity" />
         <activity android:name=".admin_view.members.GetAllMembersActivity" />
-        <activity android:name=".admin_view.members.UpdateMemberActivity"></activity>
+        <activity android:name=".admin_view.members.UpdateMemberActivity" />
+        <activity android:name=".admin_view.study_plans.GetStudyPlanActivity"></activity>
     </application>
 
 </manifest>

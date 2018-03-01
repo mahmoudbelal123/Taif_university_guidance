@@ -15,6 +15,10 @@
             android:id="@+id/nav_manage_members"
             android:title="Add Members" />
 
+        <item
+            android:id="@+id/nav_manage_study_plans"
+            android:title="Study Plans" />
+
     </group>
 
     <item android:title="Communicate">

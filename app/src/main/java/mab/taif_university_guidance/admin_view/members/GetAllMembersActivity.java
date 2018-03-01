@@ -23,14 +23,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 import mab.taif_university_guidance.R;
-import mab.taif_university_guidance.adapters.AdapterGetAllDepartments;
 import mab.taif_university_guidance.adapters.AdapterGetAllMembers;
-import mab.taif_university_guidance.adapters.AdapterGetAllUsers;
-import mab.taif_university_guidance.admin_view.AdminHomeActivity;
-import mab.taif_university_guidance.admin_view.department.GetAllDepartmentActivity;
 import mab.taif_university_guidance.model.RequestInterface;
 import mab.taif_university_guidance.model.admin.college.WebGetAllCollegesModel;
-import mab.taif_university_guidance.model.admin.department.WebGetAllDepartmentsForCollegeModel;
 import mab.taif_university_guidance.model.admin.member.WebDeleteMembersModel;
 import mab.taif_university_guidance.model.admin.member.WebGetAllMembersModel;
 

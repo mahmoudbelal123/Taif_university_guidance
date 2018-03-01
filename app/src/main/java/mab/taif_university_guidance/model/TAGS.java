@@ -29,6 +29,9 @@ public class TAGS {
     public static String DELTE_MEMBER= "delete_member";
 
 
+    public static String GET_ALL_PLANS= "get_all_plans";
+    public static String ADD_PLANS= "add_study_plan";
+
 
 
 

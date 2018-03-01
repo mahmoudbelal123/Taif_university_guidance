@@ -1,4 +1,4 @@
-package mab.taif_university_guidance.admin_view;
+package mab.taif_university_guidance.admin_view.admin_home;
 
 import android.app.AlertDialog;
 import android.content.DialogInterface;
@@ -25,8 +25,8 @@ import org.json.JSONObject;
 import mab.taif_university_guidance.R;
 import mab.taif_university_guidance.adapters.AdapterGetAllUsers;
 import mab.taif_university_guidance.admin_view.department.GetAllDepartmentActivity;
-import mab.taif_university_guidance.admin_view.members.AddMemeberActivity;
 import mab.taif_university_guidance.admin_view.members.GetAllMembersActivity;
+import mab.taif_university_guidance.admin_view.study_plans.GetStudyPlanActivity;
 import mab.taif_university_guidance.model.RequestInterface;
 import mab.taif_university_guidance.model.admin.user.WebDeleteUserModel;
 import mab.taif_university_guidance.model.admin.user.WebGetAllUsersModel;
@@ -265,6 +265,12 @@ public class AdminHomeActivity extends AppCompatActivity
         } else if (id == R.id.nav_send) {
 
         }
+        else if (id == R.id.nav_manage_study_plans) {
+            startActivity(new Intent(AdminHomeActivity.this , GetStudyPlanActivity.class));
+
+        }
+
+
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
