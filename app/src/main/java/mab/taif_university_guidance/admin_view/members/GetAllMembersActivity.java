@@ -175,6 +175,7 @@ public class GetAllMembersActivity extends AppCompatActivity {
                                 }
                                 else
                                 {
+
                                     Toast.makeText(GetAllMembersActivity.this, "No Member Deleted", Toast.LENGTH_SHORT).show();
                                 }
                             }
