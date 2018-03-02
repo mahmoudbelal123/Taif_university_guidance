@@ -1,5 +1,8 @@
 package mab.taif_university_guidance.admin_view.study_plans;
 
+import android.content.DialogInterface;
+import android.content.Intent;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -23,6 +26,7 @@ import mab.taif_university_guidance.admin_view.members.GetAllMembersActivity;
 import mab.taif_university_guidance.model.RequestInterface;
 import mab.taif_university_guidance.model.admin.college.WebGetAllCollegesModel;
 import mab.taif_university_guidance.model.admin.department.WebGetAllDepartmentsForCollegeModel;
+import mab.taif_university_guidance.model.admin.study_plans.WebDeletePlansModel;
 import mab.taif_university_guidance.model.admin.study_plans.WebGetAllPlansModel;
 
 public class GetStudyPlanActivity extends AppCompatActivity implements View.OnClickListener{
@@ -99,12 +103,77 @@ public class GetStudyPlanActivity extends AppCompatActivity implements View.OnCl
             }
         });
 
+        onItemClickList();
 
 
 
     }
 
 
+    private void onItemClickList()
+    {
+        mListViewDisplayPlans.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+
+                final int position=i;
+                AlertDialog.Builder builder = new AlertDialog.Builder(GetStudyPlanActivity.this);
+                builder.setMessage("select choice");
+                builder.setNegativeButton("delete", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                        WebDeletePlansModel mWebDeletePlansModel = new WebDeletePlansModel();
+                        mWebDeletePlansModel.deletePlan(GetStudyPlanActivity.this, idPlansArray[position], new RequestInterface() {
+                            @Override
+                            public void onResponse(String response) {
+                                if(response.equals("done"))
+                                {
+                                    Toast.makeText(GetStudyPlanActivity.this, "Plan Deleted.", Toast.LENGTH_SHORT).show();
+                                }
+                                else
+                                {
+                                    Toast.makeText(GetStudyPlanActivity.this, "Plan Not Deleted.", Toast.LENGTH_SHORT).show();
+                                }
+                            }
+
+                            @Override
+                            public void onError(VolleyError error) {
+
+                            }
+                        });
+
+                    }
+                });
+
+                builder.setPositiveButton("update", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+
+                        //TODO start update activity for plan
+
+                        Intent intent = new Intent(GetStudyPlanActivity.this ,UpdatePlanActivity.class);
+
+                        intent.putExtra("college_name",nameCollegeArray[collegePosition]);
+                        intent.putExtra("department_name",nameDepartmentArray[departmentPosition]);
+                        intent.putExtra("idCollege",idCollegeArray[collegePosition]);
+                        intent.putExtra("idDepartment",idDepartmentArray[departmentPosition]);
+                        intent.putExtra("idUser",idUserArray[collegePosition]);
+
+                        intent.putExtra("plan_name",namePlansArray[position]);
+                        intent.putExtra("desc_plan",descriptionPlansArray[position]);
+                        intent.putExtra("id_plan",idPlansArray[position]);
+
+
+                        startActivity(intent);
+
+                    }
+                });
+
+builder.show();
+            }
+        });
+
+    }
 
     private void getAllColleges()
     {
@@ -172,6 +241,8 @@ public class GetStudyPlanActivity extends AppCompatActivity implements View.OnCl
                     if(response.equals("notDone"))
                     {
                         mSelectDepartmentSpinner.setVisibility(View.INVISIBLE);
+                        mListViewDisplayPlans.setVisibility(View.INVISIBLE);
+
                         return;
                     }
 
@@ -180,7 +251,7 @@ public class GetStudyPlanActivity extends AppCompatActivity implements View.OnCl
                     JSONObject jsonResponse = new JSONObject(response);
                     JSONArray jsonArray = jsonResponse.getJSONArray("departments");
 
-//                    mListViewDisplayPlans.setVisibility(View.VISIBLE);
+                    mListViewDisplayPlans.setVisibility(View.VISIBLE);
 
                     for (int i = 0; i < jsonArray.length(); i++) {
                         JSONObject search_object = jsonArray.getJSONObject(i);
@@ -238,6 +309,8 @@ public class GetStudyPlanActivity extends AppCompatActivity implements View.OnCl
             case R.id.button_add_study_plan_getAll:
 
                 //Todo Start Activity
+                openStudyPlans();
+
 
                 break;
 
@@ -250,7 +323,16 @@ public class GetStudyPlanActivity extends AppCompatActivity implements View.OnCl
         }
     }
 
-
+      private void openStudyPlans()
+      {
+          Intent intent = new Intent(GetStudyPlanActivity.this ,AddStudyPlansActivity.class);
+          intent.putExtra("college_name",nameCollegeArray[collegePosition]);
+          intent.putExtra("department_name",nameDepartmentArray[departmentPosition]);
+          intent.putExtra("idCollege",idCollegeArray[collegePosition]);
+          intent.putExtra("idDepartment",idDepartmentArray[departmentPosition]);
+          intent.putExtra("idUser",idUserArray[collegePosition]);
+          startActivity(intent);
+      }
 
     private void getStudyPlans()
     {

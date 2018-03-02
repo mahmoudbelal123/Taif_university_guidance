@@ -31,7 +31,8 @@ public class TAGS {
 
     public static String GET_ALL_PLANS= "get_all_plans";
     public static String ADD_PLANS= "add_study_plan";
-
+    public static String UPDATE_PLANS= "update_plan";
+    public static String DELETE_PLAN= "delete_plan";
 
 
 
