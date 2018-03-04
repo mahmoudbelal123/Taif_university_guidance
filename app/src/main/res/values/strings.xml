@@ -19,5 +19,6 @@
 
     <string name="action_settings">Settings</string>
     <string name="title_activity_admin_home">AdminHomeActivity</string>
+    <string name="title_activity_add_places">Map</string>
 
 </resources>

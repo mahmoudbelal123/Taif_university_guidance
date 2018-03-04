@@ -26,6 +26,7 @@ import mab.taif_university_guidance.R;
 import mab.taif_university_guidance.adapters.AdapterGetAllUsers;
 import mab.taif_university_guidance.admin_view.department.GetAllDepartmentActivity;
 import mab.taif_university_guidance.admin_view.members.GetAllMembersActivity;
+import mab.taif_university_guidance.admin_view.places.AddPlaceDetailsActivity;
 import mab.taif_university_guidance.admin_view.study_plans.GetStudyPlanActivity;
 import mab.taif_university_guidance.model.RequestInterface;
 import mab.taif_university_guidance.model.admin.user.WebDeleteUserModel;
@@ -270,6 +271,10 @@ public class AdminHomeActivity extends AppCompatActivity
 
         }
 
+        else if (id == R.id.nav_add_places) {
+            startActivity(new Intent(AdminHomeActivity.this , AddPlaceDetailsActivity.class));
+
+        }
 
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);

@@ -77,7 +77,11 @@
         <activity android:name=".admin_view.members.UpdateMemberActivity" />
         <activity android:name=".admin_view.study_plans.GetStudyPlanActivity" />
         <activity android:name=".admin_view.study_plans.AddStudyPlansActivity" />
-        <activity android:name=".admin_view.study_plans.UpdatePlanActivity"></activity>
+        <activity android:name=".admin_view.study_plans.UpdatePlanActivity" />
+        <activity
+            android:name=".admin_view.places.AddPlacesActivity"
+            android:label="@string/title_activity_add_places" />
+        <activity android:name=".admin_view.places.AddPlaceDetailsActivity"></activity>
     </application>
 
 </manifest>

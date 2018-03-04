@@ -35,6 +35,8 @@ public class TAGS {
     public static String DELETE_PLAN= "delete_plan";
 
 
+    public static String ADD_PLACE= "add_place";
+
 
 
 

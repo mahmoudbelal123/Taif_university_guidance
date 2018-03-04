@@ -19,6 +19,9 @@
             android:id="@+id/nav_manage_study_plans"
             android:title="Study Plans" />
 
+        <item
+            android:id="@+id/nav_add_places"
+            android:title="add Places" />
     </group>
 
     <item android:title="Communicate">
