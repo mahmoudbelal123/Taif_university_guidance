@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="mab.taif_university_guidance.visitor.DisplayPlaceImagesActivity">
+
+<ImageView
+    android:layout_margin="10dp"
+    android:id="@+id/imageView_image_place_only"
+    android:layout_width="match_parent"
+    android:layout_height="200dp" />
+    <TextView
+        android:layout_margin="20dp"
+        android:gravity="center"
+        android:textSize="15sp"
+        android:textColor="@color/colorAccent"
+        android:id="@+id/text_image_place"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="image place details" />
+
+    <ListView
+        android:id="@+id/listView_display_images_places"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+</LinearLayout>

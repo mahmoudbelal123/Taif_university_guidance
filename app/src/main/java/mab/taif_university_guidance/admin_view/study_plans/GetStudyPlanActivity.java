@@ -62,6 +62,16 @@ public class GetStudyPlanActivity extends AppCompatActivity implements View.OnCl
         mAddPlanBtn.setOnClickListener(this);
         mGetAllPlansBtn.setOnClickListener(this);
 
+
+        if(getIntent().getStringExtra("userType").equals("visitor") ||getIntent().getStringExtra("userType").equals("user") )
+        {
+            mAddPlanBtn.setVisibility(View.INVISIBLE);
+
+
+        }
+
+
+
         mListViewDisplayPlans=(ListView)findViewById(R.id.listView_display_all_plans);
 
         idCollegeBuffer = new StringBuffer();
@@ -94,7 +104,6 @@ public class GetStudyPlanActivity extends AppCompatActivity implements View.OnCl
                 getAllDepartments();
 
                 collegePosition=mSelectCollegeSpinner.getSelectedIndex();
-                departmentPosition=mSelectDepartmentSpinner.getSelectedIndex();
             }
 
             @Override
@@ -103,7 +112,28 @@ public class GetStudyPlanActivity extends AppCompatActivity implements View.OnCl
             }
         });
 
-        onItemClickList();
+        mSelectDepartmentSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+                departmentPosition=mSelectDepartmentSpinner.getSelectedIndex();
+
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> adapterView) {
+
+            }
+        });
+
+        if(getIntent() != null)
+        {
+            if(!getIntent().getStringExtra("visitor").equals("visitor"))
+            {
+                onItemClickList();
+            }
+
+
+        }
 
 
 
@@ -336,12 +366,18 @@ builder.show();
 
     private void getStudyPlans()
     {
+
         WebGetAllPlansModel mWebGetAllPlansModel = new WebGetAllPlansModel();
         mWebGetAllPlansModel.getAllStudyPlans(GetStudyPlanActivity.this, idCollegeArray[collegePosition], idDepartmentArray[departmentPosition], new RequestInterface() {
             @Override
             public void onResponse(String response) {
 
            try {
+               if(response.equals("not found"))
+               {
+                   mListViewDisplayPlans.setVisibility(View.INVISIBLE);
+
+               }
                JSONObject jsonResponse = new JSONObject(response);
                JSONArray jsonArray = jsonResponse.getJSONArray("plans");
 

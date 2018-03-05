@@ -36,6 +36,11 @@ public class TAGS {
 
 
     public static String ADD_PLACE= "add_place";
+    public static String GET_PLACES= "get_places";
+    public static String GET_IMAGES_PLACES= "get_place_images";
+
+
+
 
 
 

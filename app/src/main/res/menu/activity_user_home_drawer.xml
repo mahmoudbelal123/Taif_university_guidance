@@ -3,10 +3,10 @@
 
     <group android:checkableBehavior="single">
         <item
-            android:id="@+id/nav_camera"
+            android:id="@+id/nav_search_places_user"
             android:title="Search for places" />
         <item
-            android:id="@+id/nav_gallery"
+            android:id="@+id/nav_colleges_user"
             android:title="Colleges" />
         <item
             android:id="@+id/nav_slideshow"

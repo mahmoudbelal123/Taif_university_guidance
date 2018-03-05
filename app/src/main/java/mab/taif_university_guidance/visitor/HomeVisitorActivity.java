@@ -8,6 +8,7 @@ import android.view.View;
 import android.widget.Button;
 
 import mab.taif_university_guidance.R;
+import mab.taif_university_guidance.admin_view.study_plans.GetStudyPlanActivity;
 
 public class HomeVisitorActivity extends AppCompatActivity implements View.OnClickListener{
 
@@ -81,9 +82,17 @@ public class HomeVisitorActivity extends AppCompatActivity implements View.OnCli
 
     }
 
-    private  void openCollegeSelection(){
-        startActivity(new Intent(HomeVisitorActivity.this , SearchCollegeAndDepartmentActivity.class));
+//    private  void openCollegeSelection(){
+//        startActivity(new Intent(HomeVisitorActivity.this , SearchCollegeAndDepartmentActivity.class));
+//
+//    }
 
+    private  void openCollegeSelection(){
+      //  startActivity(new Intent(HomeVisitorActivity.this , GetStudyPlanActivity.class));
+
+        Intent intent = new Intent(HomeVisitorActivity.this,GetStudyPlanActivity.class);
+        intent.putExtra("userType","visitor");
+        startActivity(intent);
     }
 
     private  void openFacultyMemberSelection(){

@@ -81,7 +81,8 @@
         <activity
             android:name=".admin_view.places.AddPlacesActivity"
             android:label="@string/title_activity_add_places" />
-        <activity android:name=".admin_view.places.AddPlaceDetailsActivity"></activity>
+        <activity android:name=".admin_view.places.AddPlaceDetailsActivity" />
+        <activity android:name=".visitor.DisplayPlaceImagesActivity"></activity>
     </application>
 
 </manifest>

@@ -12,5 +12,6 @@ public class Place {
     public static String IMAGE_LEVEL= "image_level";
     public static String LOCATION = "location";
     public static String DETAILS = "details";
+    public static String LEVEL_NUMBER = "level_number";
 
 }

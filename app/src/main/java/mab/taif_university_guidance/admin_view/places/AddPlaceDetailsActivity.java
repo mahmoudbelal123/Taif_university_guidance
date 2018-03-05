@@ -18,6 +18,7 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Toast;
 
+import com.android.volley.VolleyError;
 import com.squareup.picasso.Picasso;
 
 import java.io.ByteArrayOutputStream;
@@ -25,11 +26,13 @@ import java.util.List;
 import java.util.Locale;
 
 import mab.taif_university_guidance.R;
+import mab.taif_university_guidance.model.RequestInterface;
+import mab.taif_university_guidance.model.admin.place.WebAddPlaceModel;
 
 
 public class AddPlaceDetailsActivity extends AppCompatActivity {
 
-    EditText namePlaceEdit,detailsPlaceEdit,locationPlaceEdit;
+    EditText namePlaceEdit,detailsPlaceEdit,locationPlaceEdit,levelNumberEdit;
     ImageView placeImageView,levelImageView;
     Button addPlaceBtn;
 
@@ -48,14 +51,14 @@ public class AddPlaceDetailsActivity extends AppCompatActivity {
         namePlaceEdit=(EditText)findViewById(R.id.edit_name_place);
         detailsPlaceEdit=(EditText)findViewById(R.id.edit_place_details);
         locationPlaceEdit=(EditText)findViewById(R.id.edit_location);
-        addPlaceBtn=(Button)findViewById(R.id.button_add_place);
+        addPlaceBtn=(Button)findViewById(R.id.button_add_place_add);
         placeImageView=(ImageView)findViewById(R.id.imageView_upload_place_image);
         levelImageView=(ImageView)findViewById(R.id.imageView_upload_level_image);
+        levelNumberEdit=(EditText)findViewById(R.id.edit_level_number);
 
 
 
-
-        addPlaceBtn.setOnClickListener(new View.OnClickListener() {
+        locationPlaceEdit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 startActivityForResult(new Intent(AddPlaceDetailsActivity.this, AddPlacesActivity.class), 200);
@@ -82,6 +85,40 @@ public class AddPlaceDetailsActivity extends AppCompatActivity {
 
 
 
+        addPlaceBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                String namePlace=namePlaceEdit.getText().toString();
+                String detailsPlace=detailsPlaceEdit.getText().toString();
+                String location=latitude+","+longitude;
+                String imagePlace=getStringImage(bitmapPlace);
+                String imageLevel=getStringImageLevel(bitmapLevel);
+                 String levelNumber=levelNumberEdit.getText().toString();
+
+                WebAddPlaceModel mWebAddPlaceModel = new WebAddPlaceModel();
+                mWebAddPlaceModel.addPlace(AddPlaceDetailsActivity.this, namePlace, detailsPlace, imagePlace, imageLevel, location,levelNumber, new RequestInterface() {
+                    @Override
+                    public void onResponse(String response) {
+                        if(response.equals("done"))
+                        {
+                            Toast.makeText(AddPlaceDetailsActivity.this, "Added Place Done.", Toast.LENGTH_SHORT).show();
+                        }
+                        else
+
+                        {
+                            Toast.makeText(AddPlaceDetailsActivity.this, "Added Place Not Done.", Toast.LENGTH_SHORT).show();
+
+                        }
+                    }
+
+                    @Override
+                    public void onError(VolleyError error) {
+                        Toast.makeText(AddPlaceDetailsActivity.this, ""+error.getMessage(), Toast.LENGTH_SHORT).show();
+                    }
+                });
+            }
+        });
+
 
     }
 
@@ -104,6 +141,15 @@ public class AddPlaceDetailsActivity extends AppCompatActivity {
 //convert bitmap to string as following
     @RequiresApi(api = Build.VERSION_CODES.FROYO)
     public String getStringImage(Bitmap bmp){
+        ByteArrayOutputStream baos=new ByteArrayOutputStream();
+        bmp.compress(Bitmap.CompressFormat.JPEG,100,baos);
+        byte[] imagearray=baos.toByteArray();
+        String encodeImg= Base64.encodeToString(imagearray,Base64.DEFAULT);
+        return encodeImg;
+    }
+
+    @RequiresApi(api = Build.VERSION_CODES.FROYO)
+    public String getStringImageLevel(Bitmap bmp){
         ByteArrayOutputStream baos=new ByteArrayOutputStream();
         bmp.compress(Bitmap.CompressFormat.JPEG,100,baos);
         byte[] imagearray=baos.toByteArray();

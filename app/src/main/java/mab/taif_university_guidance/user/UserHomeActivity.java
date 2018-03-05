@@ -12,10 +12,14 @@ import android.view.Menu;
 import android.view.MenuItem;
 
 import mab.taif_university_guidance.R;
+import mab.taif_university_guidance.admin_view.study_plans.GetStudyPlanActivity;
+import mab.taif_university_guidance.visitor.MapSearchPlacesActivity;
 
 public class UserHomeActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
+
+    String userType=null;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -41,6 +45,12 @@ public class UserHomeActivity extends AppCompatActivity
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+
+        if(getIntent()!=null)
+        {
+            userType=getIntent().getStringExtra("user");
+        }
+
     }
 
     @Override
@@ -81,11 +91,18 @@ public class UserHomeActivity extends AppCompatActivity
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 
-        if (id == R.id.nav_camera) {
+        if (id == R.id.nav_search_places_user) {
             // Handle the camera action
-        } else if (id == R.id.nav_gallery) {
+            startActivity(new Intent(UserHomeActivity.this , MapSearchPlacesActivity.class));
+        } else if (id == R.id.nav_colleges_user)
+        {
 
-        } else if (id == R.id.nav_slideshow) {
+            Intent intent = new Intent(UserHomeActivity.this , GetStudyPlanActivity.class);
+            intent.putExtra("userType",userType);
+            startActivity(intent);
+
+        }
+        else if (id == R.id.nav_slideshow) {
 
         } else if (id == R.id.settings) {
 

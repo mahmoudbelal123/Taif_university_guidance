@@ -17,6 +17,7 @@ import org.json.JSONObject;
 
 import mab.taif_university_guidance.R;
 import mab.taif_university_guidance.admin_view.admin_home.AdminHomeActivity;
+import mab.taif_university_guidance.admin_view.study_plans.GetStudyPlanActivity;
 import mab.taif_university_guidance.model.RequestInterface;
 import mab.taif_university_guidance.model.login.WebLoginModel;
 
@@ -26,6 +27,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     private EditText mEmailEdit , mPasswordEdit;
     private WebLoginModel mWebLoginModel;
     private ProgressBar mProgressLogin;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -105,7 +107,10 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
 
                        if(type.equals("user"))
                        {
-                           startActivity(new Intent(LoginActivity.this , UserHomeActivity.class));
+
+                           Intent intent = new Intent(LoginActivity.this , UserHomeActivity.class);
+                           intent.putExtra("userType","user");
+                           startActivity(intent);
                        }
                        else if(type.equals("admin"))
                        {
