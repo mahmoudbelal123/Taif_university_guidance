@@ -9,7 +9,7 @@
             android:id="@+id/nav_colleges_user"
             android:title="Colleges" />
         <item
-            android:id="@+id/nav_slideshow"
+            android:id="@+id/nav_members_user"
             android:title="Faculty Members" />
         <item
             android:id="@+id/nav_manage"

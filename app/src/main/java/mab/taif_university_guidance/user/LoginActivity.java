@@ -115,7 +115,11 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                        else if(type.equals("admin"))
                        {
 
-                           startActivity(new Intent(LoginActivity.this , AdminHomeActivity.class));
+
+                          Intent intent = new Intent(LoginActivity.this , AdminHomeActivity.class);
+
+                          intent.putExtra( "userType","admin");
+                          startActivity(intent);
                        }
 
 

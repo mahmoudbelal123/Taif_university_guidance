@@ -45,8 +45,10 @@ public class AboutFacultyMemberActivity extends AppCompatActivity {
             rateVrPatient.setRating( vrPatientNum);
             rateExWell.setRating( explainWellNum);
 
-
-
+            rateTotal.setIsIndicator(true);
+            rateGdDr.setIsIndicator(true);
+            rateVrPatient.setIsIndicator(true);
+            rateExWell.setIsIndicator(true);
         }
 
     }

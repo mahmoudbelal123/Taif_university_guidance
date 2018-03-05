@@ -63,12 +63,7 @@ public class GetStudyPlanActivity extends AppCompatActivity implements View.OnCl
         mGetAllPlansBtn.setOnClickListener(this);
 
 
-        if(getIntent().getStringExtra("userType").equals("visitor") ||getIntent().getStringExtra("userType").equals("user") )
-        {
-            mAddPlanBtn.setVisibility(View.INVISIBLE);
 
-
-        }
 
 
 
@@ -125,14 +120,19 @@ public class GetStudyPlanActivity extends AppCompatActivity implements View.OnCl
             }
         });
 
-        if(getIntent() != null)
-        {
-            if(!getIntent().getStringExtra("visitor").equals("visitor"))
+
+
+
+        if(getIntent().getStringExtra("userType")!=null) {
+            if (getIntent().getStringExtra("userType").equals("visitor") || getIntent().getStringExtra("userType").equals("user")) {
+                mAddPlanBtn.setVisibility(View.INVISIBLE);
+            }
+            else
             {
                 onItemClickList();
+
+
             }
-
-
         }
 
 

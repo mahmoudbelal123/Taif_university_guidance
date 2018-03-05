@@ -12,8 +12,10 @@ import android.view.Menu;
 import android.view.MenuItem;
 
 import mab.taif_university_guidance.R;
+import mab.taif_university_guidance.admin_view.members.GetAllMembersActivity;
 import mab.taif_university_guidance.admin_view.study_plans.GetStudyPlanActivity;
 import mab.taif_university_guidance.visitor.MapSearchPlacesActivity;
+import mab.taif_university_guidance.visitor.SearchFacultyMemberActivity;
 
 public class UserHomeActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -48,7 +50,7 @@ public class UserHomeActivity extends AppCompatActivity
 
         if(getIntent()!=null)
         {
-            userType=getIntent().getStringExtra("user");
+            userType=getIntent().getStringExtra("userType");
         }
 
     }
@@ -102,7 +104,10 @@ public class UserHomeActivity extends AppCompatActivity
             startActivity(intent);
 
         }
-        else if (id == R.id.nav_slideshow) {
+        else if (id == R.id.nav_members_user) {
+            Intent intent = new Intent(UserHomeActivity.this , SearchFacultyMemberActivity.class);
+            intent.putExtra("userType",userType);
+            startActivity(intent);
 
         } else if (id == R.id.settings) {
 
